@@ -233,13 +233,18 @@ function resolveItem (item, pages, base, groupDepth = 1) {
         title: item.title
       })
     }
+    const page = resolvePage(pages, item.path, base)
+    const title = item.title || page.title
     return {
       type: 'group',
       path: item.path,
-      title: item.title,
-      sidebarDepth: item.sidebarDepth,
-      children: children.map(child => resolveItem(child, pages, base, groupDepth + 1)),
-      collapsable: item.collapsable !== false
+      title,
+      sidebarDepth: item.sidebarDepth || 1,
+      children: children.map(child => {
+        const path = item.path + child
+        return resolveItem(path, pages, base, groupDepth + 1)
+      }),
+      collapsable: item.collapsable === true
     }
   }
 }
