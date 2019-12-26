@@ -38,22 +38,22 @@ function resolveSection(path) {
     ]
   }
   // Example:
-  // '/learn/web': [{
-  //   path: '/learn/web/',
-  //   children: readDir('/learn/web')
+  // '/web': [{
+  //   path: '/web/',
+  //   children: readDir('/web')
   // }]
 }
 
 debugger
 module.exports = {
-  title: 'zzyyxxww',
-  description: 'Yeah, a page!',
+  title: 'Learn development',
+  description: 'Learning for humans',
   themeConfig: {
     sidebar: {
-      ...resolveSection('/learn/software-terms/'),
-      ...resolveSection('/learn/web/'),
-      ...resolveSection('/learn/vue/'),
-      ...resolveSection('/learn/vue-cli/'),
+      ...resolveSection('/software-terms/'),
+      ...resolveSection('/web/'),
+      ...resolveSection('/vue/'),
+      ...resolveSection('/vue-cli/'),
     }
   }
 }

@@ -1,4 +1,0 @@
-
-# Learn development
-
-* [Web](./web/)
