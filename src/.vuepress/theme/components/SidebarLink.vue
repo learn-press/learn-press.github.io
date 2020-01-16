@@ -28,9 +28,11 @@ export default {
     const active = item.type === 'auto'
       ? selfActive || item.children.some(c => isActive($route, item.basePath + '#' + c.slug))
       : selfActive
+    const title = item.title || item.path
+    const { frontmatter: { wip } } = item
     const link = item.type === 'external'
-      ? renderExternal(h, item.path, item.title || item.path)
-      : renderLink(h, item.path, item.title || item.path, active)
+      ? renderExternal(h, item.path, title)
+      : renderLink(h, item.path, title, { active, wip })
 
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
@@ -54,7 +56,7 @@ export default {
   }
 }
 
-function renderLink (h, to, text, active) {
+function renderLink (h, to, text, { active, wip }) {
   return h('router-link', {
     props: {
       to,
@@ -63,6 +65,7 @@ function renderLink (h, to, text, active) {
     },
     class: {
       active,
+      wip,
       'sidebar-link': true
     }
   }, text)
@@ -73,7 +76,7 @@ function renderChildren (h, children, path, route, maxDepth, depth = 1) {
   return h('ul', { class: 'sidebar-sub-headers' }, children.map(c => {
     const active = isActive(route, path + '#' + c.slug)
     return h('li', { class: 'sidebar-sub-header' }, [
-      renderLink(h, path + '#' + c.slug, c.title, active),
+      renderLink(h, path + '#' + c.slug, c.title, { active }),
       renderChildren(h, c.children, path, route, maxDepth, depth + 1)
     ])
   }))
@@ -122,4 +125,25 @@ a.sidebar-link
     border-left none
     &.active
       font-weight 500
+
+a.sidebar-heading.wip:after,
+a.sidebar-link.wip:after {
+    content: 'WIP';
+    background-color: #00d1b2;
+    color: #fff;
+    align-items: center;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: .75rem;
+    height: 2em;
+    justify-content: center;
+    line-height: 1.5;
+    padding-left: .75em;
+    padding-right: .75em;
+    white-space: nowrap;
+    /* background-color: black; */
+}
+a.sidebar-link.wip:after {
+  margin-left: .25rem;
+}
 </style>

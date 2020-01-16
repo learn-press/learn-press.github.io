@@ -14,7 +14,8 @@
       class="sidebar-heading clickable"
       :class="{
         open,
-        'active': isActive($route, item.path)
+        'active': isActive($route, item.path),
+        wip,
       }"
       :to="item.path"
       @click.native="$emit('toggle')"
@@ -62,6 +63,9 @@ export default {
   props: ['item', 'open', 'collapsable', 'depth'],
   components: { DropdownTransition },
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
+  computed: {
+    wip: ({ $frontmatter: { wip } }) => wip,
+  },
   beforeCreate () {
     this.$options.components.SidebarLinks = require('./SidebarLinks.vue').default
   },
