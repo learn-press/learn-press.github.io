@@ -228,12 +228,10 @@ function resolveItem (item, pages, base, groupDepth = 1) {
       )
     }
     const children = item.children || []
-    if (children.length === 0 && item.path) {
-      return Object.assign(resolvePage(pages, item.path, base), {
-        title: item.title
-      })
-    }
     const page = resolvePage(pages, item.path, base)
+    if (children.length === 0 && item.path) {
+      return page
+    }
     const title = item.title || page.title
     return {
       type: 'group',
