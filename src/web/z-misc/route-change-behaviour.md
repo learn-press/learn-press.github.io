@@ -1,5 +1,5 @@
 
-# route change behaviour
+# Route change behaviour
 
 The route of a browser can change because of several reasons:
 
@@ -8,7 +8,7 @@ The route of a browser can change because of several reasons:
 * A user clicked an `a` tag that contained a valid `href` value was clicked in a page 
 * The code of a page or extension changed the one of the properties in [`window.location`](https://developer.mozilla.org/en-US/docs/Web/API/Location)
 
-## same url click behaviour
+## Same url click behaviour
 
 Clicking an `a` tag (or pressing Enter while it is focused) with an `href`
 value identical as current url doesn't trigger a page load.

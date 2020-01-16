@@ -1,4 +1,4 @@
 
 # model
 
-model is hard word to define.
+model is a hard word to define.

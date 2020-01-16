@@ -52,6 +52,8 @@ module.exports = {
     sidebar: {
       ...resolveSection('/software-terms/'),
       ...resolveSection('/web/'),
+      ...resolveSection('/html/'),
+      ...resolveSection('/sgml-like-markup-langs/'),
       ...resolveSection('/vue/'),
       ...resolveSection('/vue-cli/'),
     }

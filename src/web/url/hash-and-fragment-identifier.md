@@ -1,5 +1,5 @@
 
-# Fragment identifier
+# Hash and fragment identifier
 
 A URL can have a fragment identifier.
 
@@ -11,7 +11,7 @@ When present in any url, it is always the last part of it.
 When referring to its value, we exclude the `#` character.
 Eg: if the url is `example.com/index.html#asd` the fragment value is `asd`.
 
-## behaviour in modern browsers
+## Behaviour in modern browsers
 
 Browsers autoscroll when the following happens:
 
@@ -22,6 +22,6 @@ Browsers autoscroll when the following happens:
 Browsers typically scroll to the top of that element
 so it's aligned with the top of the [viewport](/software-terms/viewport/).
 
-## in browser javascript
+## In browser javascript
 
 It is accessed and updatable via `window.location.hash`

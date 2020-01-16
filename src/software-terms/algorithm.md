@@ -1,10 +1,10 @@
 
 # algorithm
 
-An algorithm is a series of well defined steps that serve a specific function.
+An algorithm is a series of well defined steps that serve a specific purpose.
 
-Such function is what they are usually categorized by.
-For example, sorting algorithms are algorithms that sort lists of things.
+Such purpose is what they are usually categorized by.
+For example, an algorithm that sorts things is a sorting algorithm.
 
 (By sorting, we mean ordering a list by some criteria, for example, alphabetically).
 

@@ -1,8 +1,7 @@
+---
+wip: true
+---
 
-# Web development
+# World wide web
 
-Web development can be confusing right, hopefully these articles will help to clear the confusion.
-
-## qwe
-
-qwe
+The web is complex.
