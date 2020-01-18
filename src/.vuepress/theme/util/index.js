@@ -138,9 +138,11 @@ export function resolveSidebarItems (page, regularPath, site, localePath) {
     return []
   } else {
     const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
-    return config
+    const items = config
       ? config.map(item => resolveItem(item, pages, base))
       : []
+    sortByOrder(items)
+    return items
   }
 }
 
@@ -233,29 +235,35 @@ function resolveItem (item, pages, base, groupDepth = 1) {
         return resolveItem(path, pages, base, groupDepth + 1)
       })
 
-    function getOrder({ frontmatter: { order } }) {
-      return order || Infinity
-    }
-    children.sort((c1, c2) => {
-      const a = getOrder(c1)
-      const b = getOrder(c2)
-      if (a < b) { return -1; }
-      if (a > b) { return 1; }
-      return 0;
-    })
+    sortByOrder(children)
 
     const page = resolvePage(pages, item.path, base)
     if (children.length === 0 && item.path) {
       return page
     }
     const title = item.title || page.title
+    const { frontmatter } = page
     return {
       type: 'group',
       path: item.path,
       title,
       sidebarDepth: item.sidebarDepth || 1,
       children,
-      collapsable: item.collapsable === true
+      collapsable: item.collapsable === true,
+      frontmatter
     }
   }
+}
+
+export function sortByOrder(arr) {
+  function getOrder({ frontmatter: { order } }) {
+    return order || Infinity
+  }
+  arr.sort((c1, c2) => {
+    const a = getOrder(c1)
+    const b = getOrder(c2)
+    if (a < b) { return -1; }
+    if (a > b) { return 1; }
+    return 0;
+  })
 }
