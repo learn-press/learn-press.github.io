@@ -242,7 +242,7 @@ function resolveItem (item, pages, base, groupDepth = 1) {
       return page
     }
     const title = item.title || page.title
-    const { frontmatter } = page
+    const { frontmatter = {} } = page
     return {
       type: 'group',
       path: item.path,

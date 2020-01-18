@@ -64,7 +64,7 @@ export default {
   components: { DropdownTransition },
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   computed: {
-    wip: ({ $frontmatter: { wip } }) => wip,
+    wip: ({ item: { frontmatter: { wip } } }) => wip,
   },
   beforeCreate () {
     this.$options.components.SidebarLinks = require('./SidebarLinks.vue').default
