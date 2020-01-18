@@ -126,24 +126,7 @@ a.sidebar-link
     &.active
       font-weight 500
 
-a.sidebar-heading.wip:after,
-a.sidebar-link.wip:after {
-    content: 'WIP';
-    background-color: #00d1b2;
-    color: #fff;
-    align-items: center;
-    border-radius: 4px;
-    display: inline-flex;
-    font-size: .75rem;
-    height: 2em;
-    justify-content: center;
-    line-height: 1.5;
-    padding-left: .75em;
-    padding-right: .75em;
-    white-space: nowrap;
-    /* background-color: black; */
-}
-a.sidebar-link.wip:after {
-  margin-left: .25rem;
-}
+a.sidebar-heading.wip:after
+  margin-left: 0rem;
+
 </style>

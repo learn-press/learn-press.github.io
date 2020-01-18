@@ -227,7 +227,23 @@ function resolveItem (item, pages, base, groupDepth = 1) {
         '[vuepress] detected a too deep nested sidebar group.'
       )
     }
-    const children = item.children || []
+    const children = (item.children || [])
+      .map(child => {
+        const path = item.path + child
+        return resolveItem(path, pages, base, groupDepth + 1)
+      })
+
+    function getOrder({ frontmatter: { order } }) {
+      return order || Infinity
+    }
+    children.sort((c1, c2) => {
+      const a = getOrder(c1)
+      const b = getOrder(c2)
+      if (a < b) { return -1; }
+      if (a > b) { return 1; }
+      return 0;
+    })
+
     const page = resolvePage(pages, item.path, base)
     if (children.length === 0 && item.path) {
       return page
@@ -238,10 +254,7 @@ function resolveItem (item, pages, base, groupDepth = 1) {
       path: item.path,
       title,
       sidebarDepth: item.sidebarDepth || 1,
-      children: children.map(child => {
-        const path = item.path + child
-        return resolveItem(path, pages, base, groupDepth + 1)
-      }),
+      children,
       collapsable: item.collapsable === true
     }
   }
