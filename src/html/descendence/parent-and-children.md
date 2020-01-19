@@ -20,7 +20,7 @@ and also describe in HTML comments the relationships between them:
 * Not every descendant of an element is also a child of it
 * Not every ancestor of an element is also a parent of it
 * Void elements cannot have any descendants
-* Every element can only have one parent at a time
+* Every element can only have one parent at a time (except the root element which has no parent)
 * Normal elements can have more than one child  
 Eg: 
 ```html

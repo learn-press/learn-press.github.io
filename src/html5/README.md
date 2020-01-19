@@ -1,3 +1,6 @@
+---
+hide: true
+---
 
 # HTML5
 

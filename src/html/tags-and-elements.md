@@ -1,3 +1,6 @@
+---
+permalink: $url
+---
 
 # Tags and elements
 
@@ -7,5 +10,4 @@ They are not.
 
 Some sites online refer to HTML elements as HTML tags, which is incorrect.
 
-Both of these have their own section and reading them should clear any confusion
-as to which is which.
+The following sections should clear out any confusion regarding this.

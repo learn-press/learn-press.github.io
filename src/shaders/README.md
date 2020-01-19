@@ -1,5 +1,7 @@
 ---
 wip: true
+permalink: tags-and-elements
+hide: true
 ---
 
 # Shaders

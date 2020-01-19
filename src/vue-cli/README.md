@@ -1,5 +1,6 @@
 ---
 wip: true
+hide: true
 ---
 
 # vue-cli

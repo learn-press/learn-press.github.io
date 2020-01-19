@@ -1,5 +1,12 @@
-const join = require('path').join
+const Vue = require('vue')
+const { join, resolve } = require('path')
 const fs = require('fs')
+
+Vue.mixin({
+  computed: {
+    admin: () => 'hi',
+  },
+})
 
 function ensureSlash(path) {
   const first = path[0] === '/' ? '' : '/'
@@ -44,7 +51,6 @@ function resolveSection(path) {
   // }]
 }
 
-debugger
 module.exports = {
   title: 'Learn development',
   description: 'Learning for humans',
@@ -57,5 +63,22 @@ module.exports = {
       ...resolveSection('/vue/'),
       ...resolveSection('/vue-cli/'),
     }
-  }
+  },
+  plugins: [
+    (options, ctx) => ({
+      extendPageData ($page) {
+        const {
+          regularPath, // current page's default link (follow the file hierarchy)
+          path, // current page's real link (use regularPath when permalink does not exist)
+        } = $page
+        if (process.env.ADMIN) {
+          $page.admin = true
+        }
+      },
+      clientRootMixin: resolve(__dirname, 'mixin.js'),
+      define: {
+        ADMIN: process.env.ADMIN,
+      }
+    }),
+  ],
 }
