@@ -1,7 +1,7 @@
 
-# Descendence
+# Descendance
 
-Like in any GSML-like markup, HTML has descendence.
+Like in any GSML-like markup, HTML has descendance.
 
 One HTML element can be situated "inside" another element, like so:
 ```html

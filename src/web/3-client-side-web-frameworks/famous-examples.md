@@ -1,6 +1,3 @@
----
-permalink: asde
----
 
 # Famous examples
 

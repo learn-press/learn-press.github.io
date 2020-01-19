@@ -3,10 +3,9 @@
 
 Hi, I'm zzyyxxw, an argentinian developer living in Brazil.
 
-This is a docs style tutorial for different things I know about development.
+This is a docs style tutorial for different things I know related development.
 
 At the bottom of this page is a list of rules that I follow when writing articles.
-
 
 ## Subjects
 
@@ -15,23 +14,24 @@ At the bottom of this page is a list of rules that I follow when writing article
 * [SGML-like markup languages](./sgml-like-markup-langs)
 
 ### Web
-<ul>
-  <CustomLink to="/web/">Web (in general)</CustomLink>
-  <CustomLink to="/html/">HTML in depth</CustomLink>
-</ul>
+* <CustomLink to="/html/">HTML in depth</CustomLink>
 
 <div v-if="$page.admin">
 
-  ### Vue
-  <ul>
-    <CustomLink to="/vue/">Vue, the web framework</CustomLink>
-    <CustomLink to="/vue-cli/">Vue cli</CustomLink>
-  </ul>
+## Admin
 
-  ### Misc
-  <ul>
-    <CustomLink to="/shaders/">Shaders</CustomLink>
-  </ul>
+### Web
+* <CustomLink to="/web/">Web (in general)</CustomLink>
+
+### Vue
+* <CustomLink to="/vue/">Vue, the web framework</CustomLink>
+* <CustomLink to="/vue-cli/">Vue cli</CustomLink>
+
+### Misc
+* <CustomLink to="/shaders/">Shaders</CustomLink>
+
+### Math
+* <CustomLink to="/math-in-general/"></CustomLink>
 </div>
 
 ## Rules

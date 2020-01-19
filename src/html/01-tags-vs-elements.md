@@ -1,6 +1,3 @@
----
-permalink: $url
----
 
 # Tags and elements
 

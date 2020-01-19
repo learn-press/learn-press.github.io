@@ -1,5 +1,4 @@
 ---
-hide: true
 ---
 
 # HTML5

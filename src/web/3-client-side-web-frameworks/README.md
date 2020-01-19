@@ -1,6 +1,5 @@
 ---
 wip: true
-permalink: /client
 ---
 
 # Client side web frameworks

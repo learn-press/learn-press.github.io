@@ -1,6 +1,5 @@
 ---
 wip: true
-hide: true
 ---
 
 # vue-router
