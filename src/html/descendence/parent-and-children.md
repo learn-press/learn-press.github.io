@@ -8,8 +8,9 @@ Let's take the previous example and add `<section>` tag between `<div>` and `<sp
 and also describe in HTML comments the relationships between them:
 ```html
 <div>       <!-- ancestor of <section> and <span>, parent of <section> -->
-  <section> <!-- ancestor and parent of <span>, descendant and parent of <section> -->
-    <span></span>  <!-- descendant of <section> and <div>, child of <section> -->
+  <section> <!-- ancestor and parent of <span>, descendant and child of <div> -->
+    <span>  <!-- descendant of <section> and <div>, child of <section> -->
+    </span>
   </section>
 </div>
 ```

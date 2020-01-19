@@ -1,5 +1,9 @@
+---
+wip: true
+permalink: /client
+---
 
-# Client side web frameworks (wip)
+# Client side web frameworks
 
 Client side web frameworks (aka, client side frameworks) are frameworks that run on browsers.
 

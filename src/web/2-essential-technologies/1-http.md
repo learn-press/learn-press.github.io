@@ -1,5 +1,8 @@
+---
+wip: true
+---
 
-# HTTP (wip)
+# HTTP
 
 HTTP is the foundational [protocol](/software-terms/protocol/) of the web.
 

@@ -2,6 +2,6 @@
 wip: true
 ---
 
-# World wide web
+# The web (in broad terms)
 
 The web is complex.

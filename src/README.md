@@ -15,12 +15,15 @@ At the bottom of this page is a list of rules that I follow when writing article
 * [SGML-like markup languages](./sgml-like-markup-langs)
 
 ### Web
-* [Web in general](./web/)
-* [HTML in depth](./html/)
+* <CustomLink to="/web/">Web (in general)</CustomLink>
+* <CustomLink to="/html/">HTML in depth</CustomLink>
 
 ### Vue
-* [Vue, the web framework](./vue/)
-* [vue-cli](./vue-cli/)
+* <CustomLink to="/vue/">Vue, the web framework</CustomLink>
+* <CustomLink to="/vue-cli/">Vue cli</CustomLink>
+
+### Misc
+* <CustomLink to="/shaders/">Shaders</CustomLink>
 
 ## Rules
 

@@ -1,3 +1,6 @@
+---
+permalink: asde
+---
 
 # Famous examples
 

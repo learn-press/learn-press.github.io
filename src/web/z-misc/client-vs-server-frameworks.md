@@ -1,5 +1,8 @@
+---
+wip: true
+---
 
-# Server side vs. client side frameworks (wip)
+# Server side vs. client side frameworks
 
 In the web ecosystem, there are [server](/software-terms/client-server-model) side
 [framework](/software-terms/framework/)

@@ -141,7 +141,6 @@ export function resolveSidebarItems (page, regularPath, site, localePath) {
     const items = config
       ? config.map(item => resolveItem(item, pages, base))
       : []
-    sortByOrder(items)
     return items
   }
 }
@@ -235,8 +234,6 @@ function resolveItem (item, pages, base, groupDepth = 1) {
         return resolveItem(path, pages, base, groupDepth + 1)
       })
 
-    sortByOrder(children)
-
     const page = resolvePage(pages, item.path, base)
     if (children.length === 0 && item.path) {
       return page
@@ -253,17 +250,4 @@ function resolveItem (item, pages, base, groupDepth = 1) {
       frontmatter
     }
   }
-}
-
-export function sortByOrder(arr) {
-  function getOrder({ frontmatter: { order } }) {
-    return order || Infinity
-  }
-  arr.sort((c1, c2) => {
-    const a = getOrder(c1)
-    const b = getOrder(c2)
-    if (a < b) { return -1; }
-    if (a > b) { return 1; }
-    return 0;
-  })
 }
