@@ -4,7 +4,7 @@
     "build": "vuepress build src --dest dist"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "vuepress": "^1.2.0",
     "vuepress-plugin-mathjax": "^1.2.8"
   }
